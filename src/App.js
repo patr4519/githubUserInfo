@@ -16,6 +16,7 @@ function App() {
 }
 
 function Main() {
+  const [updateDOM, setUpdateDOM] = React.useState(0);
   const [users, setUsers] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState('');
 
@@ -34,12 +35,14 @@ function Main() {
       })
     }
     setUsers(arrOfJson);
+    setUpdateDOM(updateDOM);
   }
 
   return (
     <div className='main'>
       <InputForm addUsers={addUsers} onChangeSearchValue={onChangeSearchValue}/>
       <Users users={users}/>
+      <div>{updateDOM}</div>
     </div>
   );
 }
