@@ -1,18 +1,9 @@
 import React from "react";
+import { UnnownUser } from "./UnnownUser";
 
-export const User = ({ created_at, avatar_url, name, message }) => {
-    if (message == "Not Found") {
-        return (
-        <li>
-            <div className='item'>
-                <div className='userIMG'>
-                    <img src="img/0default.png" alt="user" className="photo"></img>
-                </div>
-                <div className="userName">Not found</div>
-                <div className='userDescription'>...</div>
-            </div>
-        </li>
-        );
+export const User = ({ created_at, avatar_url, name, message, id, deleteUser }) => {
+    if (message === "Not Found") {
+        return <UnnownUser />
     }
     return (
         <li>
@@ -22,6 +13,7 @@ export const User = ({ created_at, avatar_url, name, message }) => {
                 </div>
                 <div className="userName">{name}</div>
                 <div className='userDescription'>{created_at}</div>
+                <button onClick={() => deleteUser(id)} className="closeUser" type="button">x</button>
             </div>
         </li>
     );

@@ -8,7 +8,7 @@ export const InputForm = ({ searchValue, onChangeSearchValue, addUsers, clearInp
       <input value={searchValue} onChange={onChangeSearchValue} />
       <button onClick={() => addUsers()} type='button'>Enter</button>
       <button type='button'>Add 9 random</button>
-      <button onClick={clearInput} type='button'>Clear</button>
+      <button onClick={clearInput} type='button'>Clear input</button>
     </div>
   );
 }

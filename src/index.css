@@ -81,6 +81,14 @@ ul {
     width: 800px;
     justify-content: center;
 }
+li {
+    position: relative;
+}
+.closeUser {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
 .userName {
     background-color: rgb(216, 198, 198);
     text-align: center;

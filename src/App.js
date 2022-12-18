@@ -38,10 +38,14 @@ function Main() {
     setSearchValue('')
   }
 
+  const deleteUser = (id) => {
+    console.log(`${id} was deleted from user state`);
+  }
+
   return (
     <div className='main'>
-      <InputForm addUsers={addUsers} onChangeSearchValue={onChangeSearchValue} clearInput={clearInput} />
-      <Users users={users} />
+      <InputForm addUsers={addUsers} onChangeSearchValue={onChangeSearchValue} clearInput={clearInput} searchValue={searchValue}/>
+      <Users users={users} deleteUser={deleteUser}/>
     </div>
   );
 }
