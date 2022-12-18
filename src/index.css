@@ -1,0 +1,91 @@
+body {
+    margin: 0px 0px;
+    background-image: url(img/background.png);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 1200px;
+    height: 50px;
+    background-color: rgb(94, 86, 86);
+}
+header {
+    width: 1200px;
+    margin: auto;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    background-color: rgb(232, 232, 232);
+    text-align: center;
+}
+.name {
+    padding-left: 50px;
+    line-height: 50px;
+    color: white;
+}
+.myLink > a {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    line-height: 50px;
+    color: white;
+}
+.myLink > a:hover {
+    background-color: #2a5a5a57;
+}
+.main { 
+    background-image: url(img/bg-body.jpg);
+    margin: auto;
+    background-color: rgba(164, 137, 129, 0.57);
+    width: 1200px;
+    height: 1050px;
+}
+.inputForm {
+    text-align: center;
+    margin-top: 20px;
+}
+.item {
+    position: relative;
+    width: 220px;
+    height: 320px;
+    border-radius: 7px;
+    margin: 0px 5px 5px;
+}
+.userIMG {
+    width: 220px;
+    height: 250px;
+    border-bottom: 1px solid black;
+}
+.userIMG:hover {
+    transition: all .2s ease-in-out;
+    opacity: 0.7;
+}
+.photo {
+    width: 220px;
+    height: 250px;
+}
+.userDescription {
+    line-height: 35px;
+    text-align: center;
+    width: 220px;
+    height: 50px;
+    background-color: rgb(216, 198, 198);
+    border-radius: 0px 0px 7px 7px;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    justify-content: center;
+}
+.userName {
+    background-color: rgb(216, 198, 198);
+    text-align: center;
+}
+.listOfUsers {
+    display: flex;
+    justify-content: center;
+}
