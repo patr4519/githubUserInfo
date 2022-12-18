@@ -24,16 +24,14 @@ function Main() {
   }
 
   const addUsers = () => {
-    let arrOfJson = []
     for (let user of searchValue.split(', ')) {
       fetch(`https://api.github.com/users/${user}`)
         .then(us => us.json())
-        .then((json) => arrOfJson.push(json))
+        .then((json) => setUsers(old => [...old, json]))
         .catch((err) => {
           console.log(err);
         })
     }
-    setUsers(arrOfJson);
   }
 
   const clearInput = () => {
