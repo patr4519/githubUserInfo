@@ -35,11 +35,14 @@ function Main() {
   }
 
   const clearInput = () => {
-    setSearchValue('')
+    setSearchValue('');
+    setUsers([]);
   }
-
+  
   const deleteUser = (id) => {
-    console.log(`${id} was deleted from user state`);
+    setUsers(users.filter((item) => {
+      return item.id !== id;
+    }))
   }
 
   return (
