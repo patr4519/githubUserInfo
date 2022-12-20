@@ -34,6 +34,10 @@ function Main() {
     }
   }
 
+  const putRandom = (putUsers) => {
+    setSearchValue(putUsers());
+  }
+
   const clearInput = () => {
     setSearchValue('');
     setUsers([]);
@@ -47,7 +51,7 @@ function Main() {
 
   return (
     <div className='main'>
-      <InputForm addUsers={addUsers} onChangeSearchValue={onChangeSearchValue} clearInput={clearInput} searchValue={searchValue}/>
+      <InputForm addUsers={addUsers} onChangeSearchValue={onChangeSearchValue} clearInput={clearInput} searchValue={searchValue} putRandom={putRandom}/>
       <Users users={users} deleteUser={deleteUser}/>
     </div>
   );
