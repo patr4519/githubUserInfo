@@ -24,6 +24,10 @@ function Main() {
   }
 
   const addUsers = () => {
+    if( searchValue.split(', ').length > 9 ) {
+      alert('Too much users');
+      return;
+    }
     for (let user of searchValue.split(', ')) {
       fetch(`https://api.github.com/users/${user}`)
         .then(us => us.json())
@@ -42,17 +46,29 @@ function Main() {
     setSearchValue('');
     setUsers([]);
   }
-  
+
   const deleteUser = (id) => {
     setUsers(users.filter((item) => {
       return item.id !== id;
     }))
   }
 
+  const sortByName = () => {
+    setUsers(users.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1));
+    setUsers(old => [...old]);
+  }
+
   return (
     <div className='main'>
-      <InputForm addUsers={addUsers} onChangeSearchValue={onChangeSearchValue} clearInput={clearInput} searchValue={searchValue} putRandom={putRandom}/>
-      <Users users={users} deleteUser={deleteUser}/>
+      <InputForm 
+      addUsers={addUsers} 
+      onChangeSearchValue={onChangeSearchValue} 
+      clearInput={clearInput} searchValue={searchValue} 
+      putRandom={putRandom}
+      sortByName={sortByName} />
+      <Users 
+      users={users} 
+      deleteUser={deleteUser} />
     </div>
   );
 }
