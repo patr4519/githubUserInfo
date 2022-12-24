@@ -37,18 +37,16 @@ function Main() {
       setLimit(true);
       return;
     }
-    
+
     setGreeting(false);
     setLimit(false);
 
-    for (let user of searchValue.split(', ')) {
-      fetch(`https://api.github.com/users/${user}`)
-        .then(us => us.json())
-        .then((json) => setUsers(old => [...old, json]))
-        .catch((err) => {
-          console.log(err);
-        })
-    }
+    let names = searchValue.split(', ');
+    let requests = names.map(name => fetch(`https://api.github.com/users/${name}`));
+
+    Promise.all(requests)
+      .then(responses => Promise.all(responses.map(r => r.json())))
+      .then((users) => setUsers(users))
   }
 
   const putRandom = (putUsers) => {
