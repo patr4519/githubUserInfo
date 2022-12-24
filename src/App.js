@@ -6,6 +6,7 @@ import { InputForm } from './Elements/InputForm';
 import { Users } from './Elements/Users';
 import { validationInput } from './Functions/validationInput';
 import { DefaultGreeting } from './Elements/DefaultGreeting';
+import { AlertLimit } from './Elements/AlertLimit';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function Main() {
   const [users, setUsers] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState('');
   const [greeting, setGreeting] = React.useState(true);
+  const [limit, setLimit] = React.useState(false);
 
   const onChangeSearchValue = (event) => {
     setSearchValue(event.target.value);
@@ -32,10 +34,13 @@ function Main() {
       return;
     }
     if( searchValue.split(', ').length > 9 ) {
-      alert('Too much users');
+      setLimit(true);
       return;
     }
+    
     setGreeting(false);
+    setLimit(false);
+
     for (let user of searchValue.split(', ')) {
       fetch(`https://api.github.com/users/${user}`)
         .then(us => us.json())
@@ -54,6 +59,7 @@ function Main() {
     setSearchValue('');
     setUsers([]);
     setGreeting(true);
+    setLimit(false);
   }
 
   const deleteUser = (id) => {
@@ -79,6 +85,7 @@ function Main() {
       users={users} 
       deleteUser={deleteUser} />
       {greeting && <DefaultGreeting />}
+      {limit && <AlertLimit />}
     </div>
   );
 }

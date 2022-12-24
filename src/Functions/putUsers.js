@@ -1,5 +1,5 @@
 export function putUsers() {
-    let arr = ['paul', 'gregory', 'erin', 'albert', 'maria', 'jo', 'thomas', 'howard', 'martin', 'alfred', 'todd', 'kevin', 'sarah', 'peter', 'jesus', 'david', 'holly', 'bob', 'bobby', 'vincent', 'lisa', 'alice', 'mark', 'anna', 'artiom', 'alex', 'iliakan', 'patr4519', 'ilia', 'dmitry', 'makar', 'evgenyi', 'max', 'maxim', 'demid', 'timur', 'darya', 'miron', 'pavel', 'vlad', 'igor', 'gleb', 'andrey', 'mikhail'];
+    let arr = ['paul', 'gregory', 'erin', 'albert', 'maria', 'jo', 'thomas', 'howard', 'martin', 'alfred', 'todd', 'kevin', 'sarah', 'peter', 'jesus', 'david', 'holly', 'bob', 'bobby', 'vincent', 'lisa', 'alice', 'mark', 'anna', 'artiom', 'alex', 'iliakan', 'patr4519', 'ilia', 'dmitry', 'makar', 'evgenyi', 'max', 'maxim', 'demid', 'timur', 'darya', 'miron', 'pavel', 'igor', 'gleb', 'andrey', 'mikhail'];
 
     let str = '';
 

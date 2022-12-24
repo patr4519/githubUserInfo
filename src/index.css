@@ -1,9 +1,10 @@
 body {
-    font-family: 'Roboto Mono', monospace; 
+    font-family: 'Roboto Mono', monospace;
     margin: 0px 0px;
     background-image: url(img/background.png);
     position: relative;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -12,26 +13,53 @@ nav {
     height: 50px;
     background-color: rgb(94, 86, 86);
 }
+
 header {
     width: 1200px;
     margin: auto;
     margin-top: -20px;
     margin-bottom: -20px;
-    background-color: rgb(232, 232, 232);
+    background-image: url(img/bg-body.jpg);
     text-align: center;
 }
+
 button {
-    font-family: 'Roboto Mono', monospace; 
+    font-family: 'Roboto Mono', monospace;
+    background-color: #0000006b;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 4px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.3s;
+    cursor: pointer;
 }
+
+button:hover {
+    background-color: #368d6c;
+    color: rgb(29, 26, 26);
+}
+.userItem:hover {
+    background-color: #be1919;
+    color: rgb(29, 26, 26);
+}
+
 input {
-    font-family: 'Roboto Mono', monospace; 
+    font-family: 'Roboto Mono', monospace;
+    width: 210px;
 }
+
 .name {
     padding-left: 50px;
     line-height: 50px;
     color: white;
 }
-.myLink > a {
+
+.myLink>a {
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
@@ -40,21 +68,26 @@ input {
     line-height: 50px;
     color: white;
 }
-.myLink > a:hover {
+
+.myLink>a:hover {
     background-color: #2a5a5a57;
 }
+
 .main {
-    position: relative; 
+    position: relative;
     background-image: url(img/bg-body.jpg);
     margin: auto;
+    padding-top: 1px;
     background-color: rgba(164, 137, 129, 0.57);
     width: 1200px;
-    height: 1050px;
+    height: 1100px;
 }
+
 .inputForm {
     text-align: center;
     margin-top: 20px;
 }
+
 .item {
     position: relative;
     width: 220px;
@@ -62,19 +95,23 @@ input {
     border-radius: 7px;
     margin: 0px 5px 5px;
 }
+
 .userIMG {
     width: 220px;
     height: 250px;
     border-bottom: 1px solid black;
 }
-.userIMG:hover {
+
+/* .userIMG:hover {
     transition: all .2s ease-in-out;
     opacity: 0.7;
-}
+} */
+
 .photo {
     width: 220px;
     height: 250px;
 }
+
 .userDescription {
     font-size: 80%;
     line-height: 35px;
@@ -84,6 +121,7 @@ input {
     background-color: rgb(216, 198, 198);
     border-radius: 0px 0px 7px 7px;
 }
+
 .defaultGreeting {
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -97,6 +135,7 @@ input {
     top: 130px;
     right: 330px;
 }
+
 ul.items {
     list-style-type: none;
     display: flex;
@@ -104,19 +143,36 @@ ul.items {
     width: 800px;
     justify-content: center;
 }
+
 li {
     position: relative;
 }
+
 .closeUser {
     position: absolute;
     top: 5px;
     right: 5px;
 }
+
 .userName {
     background-color: rgb(216, 198, 198);
     text-align: center;
 }
+
 .listOfUsers {
     display: flex;
     justify-content: center;
+}
+
+.alertLimit {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+    display: inline-block;
+    font-size: 14px;
+    padding: 4px 6px;
+    position: absolute;
+    top: 23px;
+    right: 80px;
+    background-color: #ea9999;
 }

@@ -18,7 +18,7 @@ export const User = ({ created_at, avatar_url, name, message, id, deleteUser }) 
                 </div>
                 <div className="userName">{name}</div>
                 <div className='userDescription'>{`Was created: ${created_at}`}</div>
-                <button onClick={() => deleteUser(id)} className="closeUser" type="button">x</button>
+                <button onClick={() => deleteUser(id)} className="closeUser userItem" type="button">x</button>
             </div>
         </li>
     );
