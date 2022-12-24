@@ -4,7 +4,7 @@ import { User } from "./User";
 export const Users = ({ users, deleteUser }) => {
     return (
         <div className="listOfUsers">
-            <ul>
+            <ul className="items">
                 {users.map((item) => (
                     <User
                         deleteUser={deleteUser}

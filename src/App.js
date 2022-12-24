@@ -4,6 +4,8 @@ import { Nav } from './Elements/Nav';
 import { Header } from './Elements/Header';
 import { InputForm } from './Elements/InputForm';
 import { Users } from './Elements/Users';
+import { validationInput } from './Functions/validationInput';
+import { DefaultGreeting } from './Elements/DefaultGreeting';
 
 function App() {
   return (
@@ -18,16 +20,22 @@ function App() {
 function Main() {
   const [users, setUsers] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState('');
+  const [greeting, setGreeting] = React.useState(true);
 
   const onChangeSearchValue = (event) => {
     setSearchValue(event.target.value);
   }
 
   const addUsers = () => {
+    if(validationInput(searchValue) === false) {
+      alert('Not valid input. Should be: alex, john, jeck');
+      return;
+    }
     if( searchValue.split(', ').length > 9 ) {
       alert('Too much users');
       return;
     }
+    setGreeting(false);
     for (let user of searchValue.split(', ')) {
       fetch(`https://api.github.com/users/${user}`)
         .then(us => us.json())
@@ -45,6 +53,7 @@ function Main() {
   const clearInput = () => {
     setSearchValue('');
     setUsers([]);
+    setGreeting(true);
   }
 
   const deleteUser = (id) => {
@@ -69,6 +78,7 @@ function Main() {
       <Users 
       users={users} 
       deleteUser={deleteUser} />
+      {greeting && <DefaultGreeting />}
     </div>
   );
 }
