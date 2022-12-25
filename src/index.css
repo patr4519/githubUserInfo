@@ -201,7 +201,19 @@ li {
     position: absolute;
     right: 33px;
     bottom: -4px;
+    /* animation-name: example;
+    animation-duration: 5s; */
 }
+
+/* @keyframes example {
+    from {
+        background-color: #0000006b;
+    }
+
+    to {
+        background-color: rgb(60, 138, 108);
+    }
+} */
 
 .userInfo {
     background-color: #fff9f2;
@@ -225,6 +237,7 @@ li {
     background-color: #be1919;
     color: rgb(29, 26, 26);
 }
+
 .divInludes {
     margin-left: 20px;
 }
