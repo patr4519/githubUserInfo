@@ -4,7 +4,7 @@ export const DefaultGreeting = () => {
     return (
         <div className="defaultGreeting">
             <div className="opportunities">
-                <div>This site includes:</div>
+                <div className="divInludes">This site includes:</div>
                 <ul>
                     <li>React components</li>
                     <li>Validation input</li>
