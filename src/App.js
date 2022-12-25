@@ -87,9 +87,11 @@ function Main() {
         clearInput={clearInput} searchValue={searchValue}
         putRandom={putRandom}
         sortByName={sortByName} />
+        
       <Users
         users={users}
         deleteUser={deleteUser} />
+
       {greeting && <DefaultGreeting />}
       {limit && <AlertLimit />}
       {invalidInput && <InvalidInput closeInvalidInput={closeInvalidInput} />}
