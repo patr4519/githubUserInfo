@@ -7,6 +7,7 @@ import { Users } from './Elements/Users';
 import { validationInput } from './Functions/validationInput';
 import { DefaultGreeting } from './Elements/DefaultGreeting';
 import { AlertLimit } from './Elements/AlertLimit';
+import { InvalidInput } from './Elements/InvalidInput';
 
 function App() {
   return (
@@ -23,17 +24,19 @@ function Main() {
   const [searchValue, setSearchValue] = React.useState('');
   const [greeting, setGreeting] = React.useState(true);
   const [limit, setLimit] = React.useState(false);
+  const [invalidInput, setInvalidInput] = React.useState(false);
 
   const onChangeSearchValue = (event) => {
     setSearchValue(event.target.value);
   }
 
   const addUsers = () => {
-    if(validationInput(searchValue) === false) {
-      alert('Not valid input. Should be: alex, john, jeck');
+    if (validationInput(searchValue) === false) {
+      setInvalidInput(true);
+      setGreeting(false);
       return;
     }
-    if( searchValue.split(', ').length > 9 ) {
+    if (searchValue.split(', ').length > 9) {
       setLimit(true);
       return;
     }
@@ -43,7 +46,6 @@ function Main() {
 
     let names = searchValue.split(', ');
     let requests = names.map(name => fetch(`https://api.github.com/users/${name}`));
-
     Promise.all(requests)
       .then(responses => Promise.all(responses.map(r => r.json())))
       .then((users) => setUsers(users))
@@ -58,6 +60,7 @@ function Main() {
     setUsers([]);
     setGreeting(true);
     setLimit(false);
+    setInvalidInput(false);
   }
 
   const deleteUser = (id) => {
@@ -71,19 +74,25 @@ function Main() {
     setUsers(old => [...old]);
   }
 
+  const closeInvalidInput = () => {
+    setInvalidInput(false);
+    setGreeting(true);
+  }
+
   return (
     <div className='main'>
-      <InputForm 
-      addUsers={addUsers} 
-      onChangeSearchValue={onChangeSearchValue} 
-      clearInput={clearInput} searchValue={searchValue} 
-      putRandom={putRandom}
-      sortByName={sortByName} />
-      <Users 
-      users={users} 
-      deleteUser={deleteUser} />
+      <InputForm
+        addUsers={addUsers}
+        onChangeSearchValue={onChangeSearchValue}
+        clearInput={clearInput} searchValue={searchValue}
+        putRandom={putRandom}
+        sortByName={sortByName} />
+      <Users
+        users={users}
+        deleteUser={deleteUser} />
       {greeting && <DefaultGreeting />}
       {limit && <AlertLimit />}
+      {invalidInput && <InvalidInput closeInvalidInput={closeInvalidInput} />}
     </div>
   );
 }

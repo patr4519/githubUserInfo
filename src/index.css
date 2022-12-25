@@ -43,6 +43,7 @@ button:hover {
     background-color: #368d6c;
     color: rgb(29, 26, 26);
 }
+
 .userItem:hover {
     background-color: #be1919;
     color: rgb(29, 26, 26);
@@ -175,4 +176,21 @@ li {
     top: 23px;
     right: 80px;
     background-color: #ea9999;
+}
+
+.invalidInput {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 420px;
+    padding: 50px 10px;
+    position: absolute;
+    top: 250px;
+    right: 360px;
+}
+.closeInvalidInput {
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
