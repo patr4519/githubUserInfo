@@ -47,8 +47,15 @@ function Main() {
     let names = searchValue.split(', ');
     let requests = names.map(name => fetch(`https://api.github.com/users/${name}`));
     Promise.all(requests)
+      .then(requests => {
+        if(requests[0].status === 403) {
+          throw new Error('Forbidden by GitHub: 403. Too mutch requests!');
+        }
+        return requests;
+      })
       .then(responses => Promise.all(responses.map(r => r.json())))
       .then((users) => setUsers(users))
+      .catch(err => alert(err))
   }
 
   const putRandom = (putUsers) => {
