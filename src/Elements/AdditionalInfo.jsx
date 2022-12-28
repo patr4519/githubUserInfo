@@ -6,12 +6,21 @@ export const AdditionalInfo = ({id, followers, following, public_repos, updated_
 
     return (
         <div className="userInfo">
-            <p>User id: {id}</p>
-            <p>Followers: {followers}</p>
-            <p>Following: {following}</p>
-            <p>Public repos.: {public_repos}</p>
-            <p>Last updated: {updated_at}</p>
-            <p><a href={`${html_url}`} target='_blank'>Go to github profile</a></p>
+            <div className="leftP">
+                <p>User id: </p>
+                <p>Followers: </p>
+                <p>Following: </p>
+                <p>Public repos: </p>
+                <p>Last updated: </p>
+            </div>
+            <div className="rightP">
+                <p>{id}</p>
+                <p>{followers}</p>
+                <p>{following}</p>
+                <p>{public_repos}</p>
+                <p>{updated_at}</p>
+            </div>
+            <p className="userLink"><a href={`${html_url}`} target='_blank'>Go to github profile</a></p>
             <button onClick={() => setAdditionInfo(false)} className="closeAdInfo">x</button>
         </div>
     );

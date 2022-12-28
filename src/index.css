@@ -201,20 +201,7 @@ li {
     position: absolute;
     right: 33px;
     bottom: -4px;
-    /* animation-name: example;
-    animation-duration: 5s; */
 }
-
-/* @keyframes example {
-    from {
-        background-color: #0000006b;
-    }
-
-    to {
-        background-color: rgb(60, 138, 108);
-    }
-} */
-
 .userInfo {
     background-color: #fff9f2;
     position: relative;
@@ -223,10 +210,25 @@ li {
     border: 1px solid black;
     width: 218px;
     height: 249px;
-    font-size: 16px;
-    text-align: center;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
 }
-
+.leftP {
+    padding: 15px 5px;
+}
+.leftP > p {
+    font-weight: bold;
+}
+.rightP {
+    text-align: right;
+    padding: 15px 5px;
+}
+.userLink {
+    position: absolute;
+    top: 210px;
+    right: 20px;
+}
 .closeAdInfo {
     position: absolute;
     top: 0px;
