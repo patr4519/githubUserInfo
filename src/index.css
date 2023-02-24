@@ -243,3 +243,12 @@ li {
 .divInludes {
     margin-left: 20px;
 }
+
+.skeletons {
+    display: flex;
+    justify-content: center;   
+}
+
+.skeleton {
+    margin: 0px 8px;
+}
